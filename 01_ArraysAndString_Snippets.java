@@ -12,7 +12,7 @@ public class 01_ArraysAndString_Snippets {
      * =============================================================================
      */
     // Java 7
-    public HashMap<Integer, User> getUserMap(final List<User> users) {
+    public HashMap<Integer, User> getUserMapA(final List<User> users) {
 
         HashMap<Integer, User> userMap = new HashMap<>();
         for (User u : users) {
@@ -22,7 +22,7 @@ public class 01_ArraysAndString_Snippets {
     }
 
     // Java 8
-    public HashMap<Integer, User> getUserMap(final List<User> users) {
+    public HashMap<Integer, User> getUserMapB(final List<User> users) {
         return users.stream()
                 .collect(Collectors.toMap(User::getId, Function.identity()));
     }
@@ -59,7 +59,7 @@ public class 01_ArraysAndString_Snippets {
      * =============================================================================
      */
     //  Solution 1 (with reverse loop)
-    public static String reverseString(final String text) {
+    public static String reverseStringA(final String text) {
         final StringBuilder sb = new StringBuilder();
 
         for (int i = text.length() - 1; i >= 0; i--) {
@@ -70,7 +70,7 @@ public class 01_ArraysAndString_Snippets {
     }
 
     // Solution 2 (using reverse method from StringBuilder)
-    public static String reverseString(final String text) {
+    public static String reverseStringB(final String text) {
         return new StringBuilder(text)
                 .reverse()
                 .toString();
